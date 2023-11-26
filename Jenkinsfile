@@ -9,17 +9,17 @@ pipeline {
         }
         stage ('docker login') {
             steps {
-                sh 'echo <token> | /usr/bin/docker login -u heenashinganjude --password-stdin'
+                sh 'echo dckr_pat_QtzNNSh1noa8I-sJ7ApvMDMltA | /usr/bin/docker login -u heenashinganjude --password-stdin'
             }
         }
         stage ('docker build image') {
             steps {
-                sh '/usr/bin/docker image build -t heenashinganjude/mywebsite .'
+                sh '/usr/bin/docker image build -t heenashinganjude/wywebsite .'
             }
         }
         stage ('docker push image') {
             steps {
-                sh '/usr/bin/docker image push heenashinganjude/mywebsite'
+                sh '/usr/bin/docker image push heenashinganjude/wywebsite'
             }
         }
         stage ('docker remove service') {
